@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>allUsers</title>
+</head>
+<body>
+<br/>
+
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th scope="col">id</th>
+    <th scope="col">First Name</th>
+    <th scope="col">Last Name</th>
+    <th scope="col">Specialisation</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="user: ${users}">
+    <td th:number="${user.id}">id</td>
+    <td th:text="${user.firstName}">first_name</td>
+    <td th:text="${user.lastName}">last_name</td>
+    <td th:text="${user.specialisation}">specialisation</td>
+  </tr>
+  </tbody>
+</table>
+<br/>
+<br/>
+
+<a th:href="@{/addUser}">Add new User</a>
+
+</body>
+</html>
